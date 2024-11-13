@@ -22,11 +22,9 @@
         .admin-logo {
             margin-bottom: 20px;
             width: 300px;
-            display: none;
         }
 
-        .admin,
-        .construtora {
+        .admin {
             background-color: white;
             padding-top: 20px;
             padding-bottom: 30px;
@@ -34,16 +32,6 @@
             padding-right: 20px;
             border-radius: 10px;
             width: 400px;
-        }
-
-        .choice {
-            width: 218px;
-            padding: 10px 0;
-            border-radius: 5px 5px 0 0;
-            border: none;
-            cursor: pointer;
-            color: black;
-            background-color: white;
         }
 
         .admin-container {
@@ -134,58 +122,9 @@
             color: white;
         }
 
-        @keyframes typing {
-            from {
-                width: 0
-            }
-
-            to {
-                width: 290px
-            }
-        }
-
-        @keyframes blink-caret {
-
-            from,
-            to {
-                border-color: transparent
-            }
-
-            50% {
-                border-color: white;
-            }
-        }
-
-        .smart-reais {
-            margin-top: 25px;
-            margin-bottom: 20px;
-            width: 290px;
-            white-space: nowrap;
-            overflow: hidden;
-            font-family: monospace;
-            font-size: 3em;
-            color: white;
-            border-right: 0.15em solid white;
-            animation:
-                typing 2s steps(40, end),
-                blink-caret .30s step-end infinite;
-        }
-
         @media only screen and (max-width: 600px) {
-
-            .admin,
-            .construtora {
+            .admin {
                 width: 85%;
-                border-radius: 3px 3px 10px 10px;
-            }
-
-            .choice-container {
-                display: flex;
-                flex-direction: row;
-            }
-
-            .choice {
-                width: 46vw;
             }
         }
     </style>
@@ -193,7 +132,6 @@
 
 <body>
     <div class="admin-container">
-        <div class="smart-reais"><b>SMART</b> agora é</div>
         <img class="admin-logo" src="./assets/logo-white.png" />
         <div class="admin">
             <h2 class="admin-title">Área administrativa</h2>
@@ -220,14 +158,6 @@
                     icon.className = "fas fa-eye-slash";
                 }
             }
-
-            document.addEventListener('DOMContentLoaded', function () {
-                setTimeout(() => {
-                    document.querySelector('.smart-reais').style.display = 'none';
-                    document.querySelector('.admin-logo').style.display = 'block';
-                    document.querySelector('.choice-container').style.display = 'block';
-                }, 3500);
-            });
         </script>
     </div>
 </body>
