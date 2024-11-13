@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>RE.AI.s - Login</title>
+    <title>RE.AI.s - admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" />
@@ -19,21 +19,20 @@
             background-color: #161616;
         }
 
-        .login-logo {
+        .admin-logo {
             margin-bottom: 20px;
             width: 300px;
             display: none;
         }
 
-        .corretor,
+        .admin,
         .construtora {
-            display: none;
             background-color: white;
             padding-top: 20px;
             padding-bottom: 30px;
             padding-left: 20px;
             padding-right: 20px;
-            border-radius: 0 0 10px 10px;
+            border-radius: 10px;
             width: 400px;
         }
 
@@ -47,7 +46,7 @@
             background-color: white;
         }
 
-        .login-container {
+        .admin-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -56,7 +55,7 @@
             max-width: 500px;
         }
 
-        .form-login {
+        .form-admin {
             display: flex;
             flex-direction: column;
         }
@@ -78,7 +77,7 @@
             cursor: pointer;
         }
 
-        .form-login input {
+        .form-admin input {
             width: 100%;
             padding: 8px;
             box-sizing: border-box;
@@ -86,19 +85,20 @@
             border-radius: 4px;
         }
 
-        .login-title {
+        .admin-title {
             font-size: 1.7em;
             text-align: center;
             font-weight: lighter;
             margin: 0;
             margin-top: 15px;
+            margin-bottom: 20px;
         }
 
-        .login-subtitle {
+        .admin-subtitle {
             text-align: center;
         }
 
-        .btn-login {
+        .btn-admin {
             width: 100%;
             padding: 8px;
             box-sizing: border-box;
@@ -109,7 +109,7 @@
             background-color: #ED5B00;
         }
 
-        .btn-login:hover {
+        .btn-admin:hover {
             background-color: #ff8a41;
         }
 
@@ -125,7 +125,7 @@
             color: #963a00;
         }
 
-        .input-login {
+        .input-admin {
             margin-top: 5px;
             margin-bottom: 5px;
         }
@@ -173,7 +173,7 @@
 
         @media only screen and (max-width: 600px) {
 
-            .corretor,
+            .admin,
             .construtora {
                 width: 85%;
                 border-radius: 3px 3px 10px 10px;
@@ -192,37 +192,18 @@
 </head>
 
 <body>
-    <div class="login-container">
+    <div class="admin-container">
         <div class="smart-reais"><b>SMART</b> agora é</div>
-        <img class="login-logo" src="./assets/logo-white.png" />
-        <div class="choice-container">
-            <button class="choice" id="corretorButton">CORRETOR/IMOBILIÁRIA</button>
-            <button class="choice" id="construtoraButton">CONSTRUTORA</button>
-        </div>
-        <div class="corretor">
-            <h2 class="login-title">Bem-vindo de volta!</h2>
-            <h3 class="login-subtitle">Corretor/Imobiliária</h3>
-            <form class="form-login">
-                <input type="email" class="input-login" placeholder="Login">
+        <img class="admin-logo" src="./assets/logo-white.png" />
+        <div class="admin">
+            <h2 class="admin-title">Área administrativa</h2>
+            <form class="form-admin">
+                <input type="email" class="input-admin" placeholder="Email">
                 <div class="password-toggle">
-                    <input type="password" id="corretorPassword" placeholder="Senha">
-                    <i class="fas fa-eye-slash" onclick="togglePasswordVisibility('corretorPassword', this)"></i>
+                    <input type="password" id="adminPassword" placeholder="Senha">
+                    <i class="fas fa-eye-slash" onclick="togglePasswordVisibility('adminPassword', this)"></i>
                 </div>
-                <button class="btn-login">Logar</button>
-                <a class="btn-recovery" href="">Esqueceu a senha?</a>
-            </form>
-        </div>
-        <div class="construtora">
-            <h2 class="login-title">Bem-vindo de volta!</h2>
-            <h3 class="login-subtitle">Construtora</h3>
-            <form class="form-login">
-                <input type="email" class="input-login" placeholder="Login">
-                <div class="password-toggle">
-                    <input type="password" id="construtoraPassword" placeholder="Senha">
-                    <i class="fas fa-eye-slash" onclick="togglePasswordVisibility('construtoraPassword', this)"></i>
-                </div>
-                <button class="btn-login">Logar</button>
-                <a class="btn-recovery" href="">Esqueceu a senha?</a>
+                <button class="btn-admin">Logar</button>
             </form>
         </div>
 
@@ -243,37 +224,10 @@
             document.addEventListener('DOMContentLoaded', function () {
                 setTimeout(() => {
                     document.querySelector('.smart-reais').style.display = 'none';
-                    document.querySelector('.login-logo').style.display = 'block';
+                    document.querySelector('.admin-logo').style.display = 'block';
                     document.querySelector('.choice-container').style.display = 'block';
                 }, 3500);
             });
-
-            document.getElementById('corretorButton').addEventListener('click', function () {
-                document.querySelector('.corretor').style.display = 'block';
-                document.querySelector('.construtora').style.display = 'none';
-
-                document.getElementById('construtoraButton').style.backgroundColor = '#d9d9d9';
-                document.getElementById('corretorButton').style.backgroundColor = 'white';
-                document.getElementById('corretorButton').style.paddingTop = '15px';
-                document.getElementById('construtoraButton').style.paddingTop = '10px';
-            });
-
-            document.getElementById('construtoraButton').addEventListener('click', function () {
-                document.querySelector('.corretor').style.display = 'none';
-                document.querySelector('.construtora').style.display = 'block';
-
-                document.getElementById('corretorButton').style.backgroundColor = '#d9d9d9';
-                document.getElementById('construtoraButton').style.backgroundColor = 'white';
-                document.getElementById('construtoraButton').style.paddingTop = '15px';
-                document.getElementById('corretorButton').style.paddingTop = '10px';
-            });
-
-            window.onload = function () {
-                document.querySelector('.corretor').style.display = 'block';
-                document.querySelector('.construtora').style.display = 'none';
-                document.getElementById('construtoraButton').style.backgroundColor = '#d9d9d9';
-                document.getElementById('corretorButton').style.paddingTop = '15px';
-            }
         </script>
     </div>
 </body>

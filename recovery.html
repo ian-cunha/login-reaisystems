@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>RE.AI.s - recovery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #161616;
+        }
+
+        .recovery-logo {
+            margin-bottom: 20px;
+            width: 300px;
+        }
+
+        .recovery {
+            background-color: white;
+            padding-top: 20px;
+            padding-bottom: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 10px;
+            width: 400px;
+        }
+
+        .recovery-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-recovery {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .password-toggle {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .password-toggle input {
+            padding-right: 30px;
+        }
+
+        .password-toggle i {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .form-recovery input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .recovery-title {
+            font-size: 1.7em;
+            text-align: center;
+            font-weight: bold;
+            margin: 0;
+            margin-top: 15px;
+        }
+
+        .recovery-subtitle {
+            text-align: center;
+            font-size: 1em;
+            font-weight: lighter;
+        }
+
+        .recovery-subtitle2 {
+            text-align: center;
+            font-size: 0.90em;
+            font-weight: lighter;
+        }
+
+        .btn-recovery {
+            width: 65%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ED5B00;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+            background-color: #ED5B00;
+        }
+
+        .btn-recovery:hover {
+            background-color: #ff8a41;
+        }
+
+        .input-recovery {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .logo {
+            color: white;
+        }
+
+        .btn-return {
+            width: 30%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ED5B00;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+            background-color: #ED5B00;
+        }
+
+        .btn-return:hover {
+            background-color: #ff8a41;
+        }
+
+        .btns {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .recovery {
+            width: 80%;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="recovery-container">
+        <img class="recovery-logo" src="./assets/logo-white.png" />
+        <div class="recovery">
+            <h2 class="recovery-title">Esqueceu sua Senha ?</h2>
+            <h3 class="recovery-subtitle">Digite seu endereço de e-mail abaixo para recuperar sua senha.</h3>
+            <p class="recovery-subtitle2">O sistema irá enviar um e-mail com seus dados de usuário.</p>
+            <form class="form-recovery">
+                <input type="email" class="input-recovery" placeholder="Email">
+                <div class="btns">
+                    <button class="btn-return">Voltar</button>
+                    <button class="btn-recovery">Enviar</button>
+                </div>
+            </form>
+        </div>
+
+        <p class="logo">© Real Estate AI Planner</p>
+    </div>
+</body>
+
+</html>
