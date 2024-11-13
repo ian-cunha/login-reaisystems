@@ -2,68 +2,279 @@
 <html lang="pt-BR">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>SMART IMOBILIÁRIO by Reaisystem</title>
-	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'>
-	<link rel="stylesheet" href="./style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RE.AI.s - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ED5B00;
+        }
 
+        .login-logo {
+            margin-bottom: 20px;
+            width: 300px;
+            display: none;
+        }
+
+        .corretor,
+        .imobiliaria {
+            display: none;
+            background-color: white;
+            padding-top: 20px;
+            padding-bottom: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 0 0 10px 10px;
+            width: 400px;
+        }
+
+        .choice {
+            width: 218px;
+            padding: 10px 0;
+            border-radius: 5px 5px 0 0;
+            border: none;
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .login-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-login {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .password-toggle {
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .password-toggle input {
+            padding-right: 30px;
+        }
+
+        .password-toggle i {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .form-login input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .login-title {
+            font-size: 1.7em;
+            text-align: center;
+            font-weight: lighter;
+            margin: 0;
+            margin-top: 15px;
+        }
+
+        .login-subtitle {
+            text-align: center;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ED5B00;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+            background-color: #ED5B00;
+        }
+
+        .btn-login:hover {
+            background-color: #ff8a41;
+        }
+
+        .btn-recovery {
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            text-decoration: none;
+            color: #ED5B00;
+        }
+
+        .btn-recovery:hover {
+            color: #963a00;
+        }
+
+        .input-login {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .logo {
+            color: white;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 350px
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: white;
+            }
+        }
+
+        .smart-reais {
+            margin-top: 25px;
+            margin-bottom: 20px;
+            width: 335px;
+            white-space: nowrap;
+            overflow: hidden;
+            font-family: monospace;
+            font-size: 3em;
+            color: white;
+            border-right: 0.15em solid white;
+            animation:
+                typing 2s steps(40, end),
+                blink-caret .30s step-end infinite;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            .corretor,
+            .imobiliaria {
+                width: 85%;
+                border-radius: 10px 10px 10px 10px;
+            }
+
+            .choice-container {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .choice {
+                width: 46vw;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <div class="login-container">
+        <div class="smart-reais"><b>SMART</b>, agora é</div>
+        <img class="login-logo" src="./assets/logo-white.png" />
+        <div class="choice-container">
+            <button class="choice" id="corretorButton">CORRETOR/IMOBILIÁRIA</button>
+            <button class="choice" id="imobiliariaButton">CONSTRUTORA</button>
+        </div>
+        <div class="corretor">
+            <h2 class="login-title">Bem-vindo de volta!</h2>
+            <h3 class="login-subtitle">Corretor/Imobiliária</h3>
+            <form class="form-login">
+                <input type="text" class="input-login" placeholder="Login">
+                <div class="password-toggle">
+                    <input type="password" id="corretorPassword" placeholder="Senha">
+                    <i class="fas fa-eye-slash" onclick="togglePasswordVisibility('corretorPassword', this)"></i>
+                </div>
+                <button class="btn-login">Logar</button>
+                <a class="btn-recovery" href="">Esqueceu a senha?</a>
+            </form>
+        </div>
+        <div class="imobiliaria">
+            <h2 class="login-title">Bem-vindo de volta!</h2>
+            <h3 class="login-subtitle">Construtora</h3>
+            <form class="form-login">
+                <input type="text" class="input-login" placeholder="Login">
+                <div class="password-toggle">
+                    <input type="password" id="imobiliariaPassword" placeholder="Senha">
+                    <i class="fas fa-eye-slash" onclick="togglePasswordVisibility('imobiliariaPassword', this)"></i>
+                </div>
+                <button class="btn-login">Logar</button>
+                <a class="btn-recovery" href="">Esqueceu a senha?</a>
+            </form>
+        </div>
 
-	<h2>Acessar o SMART IMOBILIÁRIO</h2>
+        <p class="logo">© Real Estate AI Planner</p>
 
-	<div class="container" id="container">
+        <script>
+            function togglePasswordVisibility(id, icon) {
+                const passwordInput = document.getElementById(id);
+                if (passwordInput.type === "password") {
+                    passwordInput.type = "text";
+                    icon.className = "fas fa-eye";
+                } else {
+                    passwordInput.type = "password";
+                    icon.className = "fas fa-eye-slash";
+                }
+            }
 
-		<div class="overlay-form">
-			<div class="form-container sign-up-container">
-				<form action="https://app.reaisystems.com.br/usuario/loginSmart" method="post">
-					<h1>Sou Imobiliária</h1>
-					<span>Fazer login</span>
-					<input type="email" name="usuario.email" placeholder="Email" />
-					<input type="password" name="usuario.senha" placeholder="Senha" />
-					<a href="https://app.reaisystems.com.br/usuario/paginaRecuperarSenha">Esqueceu sua
-						senha?</a>
-					<button>Logar</button>
-				</form>
-			</div>
-			<div class="form-container sign-in-container">
-				<form action="https://app.reaisystems.com.br/usuario/loginSmart" method="post">
-					<h1>Sou Corretor</h1>
-					<span>Fazer login</span>
-					<input type="email" name="usuario.email" placeholder="Email" />
-					<input type="password" name="usuario.senha" placeholder="Senha" />
-					<a href="https://app.reaisystems.com.br/usuario/paginaRecuperarSenha">Esqueceu sua
-						senha?</a>
-					<button type="submit">Logar</button>
-				</form>
-			</div>
-		</div>
+            document.addEventListener('DOMContentLoaded', function () {
+                setTimeout(() => {
+                    document.querySelector('.smart-reais').style.display = 'none';
+                    document.querySelector('.login-logo').style.display = 'block';
+                    document.querySelector('.choice-container').style.display = 'block';
+                }, 3500);
+            });
 
-		<div class="overlay-container">
-			<div class="overlay">
-				<div class="overlay-panel overlay-left">
-					<h1>CORRETOR</h1>
-					<p>Acessar sua conta de corretor.</p>
-					<button class="ghost" id="signIn">CORRETOR</button>
-				</div>
-				<div class="overlay-panel overlay-right">
-					<h1>CONSTRUTORA</h1>
-					<p>Acesse sua conta de construtora.</p>
-					<button class="ghost" id="signUp">Construtora</button>
-				</div>
-			</div>
-		</div>
+            document.getElementById('corretorButton').addEventListener('click', function () {
+                document.querySelector('.corretor').style.display = 'block';
+                document.querySelector('.imobiliaria').style.display = 'none';
 
-		<footer>
-			<p>Ecossistema <a target="_blank" href="https://realestateaiplanner.com.br/">Real Estate AI PLanner</a>.</p>
-		</footer>
+                document.getElementById('imobiliariaButton').style.backgroundColor = '#d9d9d9';
+                document.getElementById('corretorButton').style.backgroundColor = 'white';
+                document.getElementById('corretorButton').style.paddingTop = '15px';
+                document.getElementById('imobiliariaButton').style.paddingTop = '10px';
+            });
 
-	</div>
+            document.getElementById('imobiliariaButton').addEventListener('click', function () {
+                document.querySelector('.corretor').style.display = 'none';
+                document.querySelector('.imobiliaria').style.display = 'block';
 
-	<script src="./script.js"></script>
+                document.getElementById('corretorButton').style.backgroundColor = '#d9d9d9';
+                document.getElementById('imobiliariaButton').style.backgroundColor = 'white';
+                document.getElementById('imobiliariaButton').style.paddingTop = '15px';
+                document.getElementById('corretorButton').style.paddingTop = '10px';
+            });
 
+            window.onload = function () {
+                document.querySelector('.corretor').style.display = 'block';
+                document.querySelector('.imobiliaria').style.display = 'none';
+                document.getElementById('imobiliariaButton').style.backgroundColor = '#d9d9d9';
+                document.getElementById('corretorButton').style.paddingTop = '15px';
+            }
+        </script>
+    </div>
 </body>
 
 </html>
